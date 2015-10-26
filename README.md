@@ -32,10 +32,10 @@ dbind is a wrapper around [`destructuring-bind`](http://www.lispworks.com/docume
 `d-binding` lets you build `d-bind` into the parameter list of a definition:
 
 ```common-lisp
-(d-binding defun my-fun ((head . tail) something-else)
+(d-binding defun my-fun ((head . tail) something)
   (format t "~A" head)
   (format t "~{~A ~}" tail)
-  (format t "~A" something-else))
+  (format t "~A" something))
 ```
 
 `d-binding` works for anything that uses the same block as `defun` to declare parameters. `defmacro` will work. `defmethod` hasn't been tested, but if you use a qualifier (`defmethod foo :after`) it will definitely fail, and you will cry.
