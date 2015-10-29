@@ -39,3 +39,18 @@ dbind is a wrapper around [`destructuring-bind`](http://www.lispworks.com/docume
 ```
 
 `d-binding` works for anything that uses the same block as `defun` to declare parameters. `defmacro` will work. `defmethod` hasn't been tested, but if you use a qualifier (`defmethod foo :after`) it will definitely fail, and you will cry.
+
+####Alternatively
+
+If you don't like the weird structure of `dbinding`, you can use `with-dbind-vars`:
+
+```common-lisp
+(with-dbind-vars 2 3                   
+  (defun foo ((_ . tail) (head . _))   
+    (cons head tail)))                
+```
+
+You have to tell it where your vars are and where the body of your statement is:
+`with-dbind-vars 2 3` would fit `defun` or `defmacro`, where the vars are second and the body follows the vars.
+
+You must do this because I don't know how to introspect and do it for you yet.
