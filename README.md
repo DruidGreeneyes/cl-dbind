@@ -45,9 +45,9 @@ dbind is a wrapper around [`destructuring-bind`](http://www.lispworks.com/docume
 If you don't like the weird structure of `dbinding`, you can use `with-dbind-vars`:
 
 ```common-lisp
-(with-dbind-vars 2 3                   
-  (defun foo ((_ . tail) (head . _))   
-    (cons head tail)))                
+(with-dbind-vars 2 3
+  (defun foo ((_ . tail) (head . _))
+    (cons head tail)))
 ```
 
 You have to tell it where your vars are and where the body of your statement is:
