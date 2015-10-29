@@ -51,6 +51,7 @@ If you don't like the weird structure of `dbinding`, you can use `with-dbind-var
 ```
 
 You have to tell it where your vars are and where the body of your statement is:
+
 `with-dbind-vars 2 3` would fit `defun` or `defmacro`, where the vars are second and the body follows the vars.
 
 You must do this because I don't know how to introspect and do it for you yet.
