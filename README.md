@@ -1,5 +1,5 @@
 TODO
-- [*] de-duplicate the tail end of d-binding
+- [x] de-duplicate the tail end of d-binding
 - [ ] extract the functions so they can stand on their own?
 - [ ] reader macro?
 - [ ] add option to use `cl-pattern:match` instead?
